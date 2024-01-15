@@ -2,6 +2,7 @@
 using System;
 using System.Configuration;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace ZZinventory
 {
@@ -13,7 +14,6 @@ namespace ZZinventory
         {
             InitializeComponent();
         }
-
 
 
         private void InitializeComponent()
@@ -37,7 +37,6 @@ namespace ZZinventory
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(291, 32);
             txtUsername.TabIndex = 0;
-            txtUsername.TextChanged += textBox1_TextChanged;
             txtUsername.KeyPress += txtUsername_KeyPress;
             // 
             // txtPassword
@@ -59,7 +58,6 @@ namespace ZZinventory
             label1.Size = new Size(155, 28);
             label1.TabIndex = 2;
             label1.Text = "Nom D'utilisateur";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -70,7 +68,6 @@ namespace ZZinventory
             label2.Size = new Size(123, 28);
             label2.TabIndex = 3;
             label2.Text = "Mot De Passe";
-            label2.Click += label2_Click;
             // 
             // pictureBox1
             // 
@@ -82,7 +79,6 @@ namespace ZZinventory
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnLogin
             // 
@@ -115,7 +111,6 @@ namespace ZZinventory
             label3.Size = new Size(145, 28);
             label3.TabIndex = 7;
             label3.Text = "Pas de compte ?";
-            label3.Click += label3_Click;
             // 
             // LoginPage
             // 
@@ -135,35 +130,6 @@ namespace ZZinventory
             PerformLayout();
         }
 
-        private bool AuthenticateUser(string login, string password)
-        {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT COUNT(*) FROM Medecin WHERE login_m = @login AND password_m = @password";
-                using (MySqlCommand command = new MySqlCommand(query, conn))
-                {
-                    command.Parameters.AddWithValue("@login", login);
-                    command.Parameters.AddWithValue("@password", password);
-
-                    int count = Convert.ToInt32(command.ExecuteScalar());
-                    conn.Close();
-
-                    return count > 0;
-                }
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private TextBox txtUsername;
         private TextBox txtPassword;
         private Label label1;
@@ -174,6 +140,28 @@ namespace ZZinventory
         private System.ComponentModel.IContainer components;
         private Button btnLogin;
 
+        private bool AuthenticateUser(string login, string password)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT password_m FROM Medecin WHERE login_m = @login";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@login", login);
+
+                    string hashedPassword = command.ExecuteScalar() as string;
+                    conn.Close();
+
+                    if (hashedPassword != null && BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
@@ -208,25 +196,10 @@ namespace ZZinventory
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             NewUser NewUser = new NewUser();
             NewUser.Show();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
