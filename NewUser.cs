@@ -1,50 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ZZinventory
 {
     public partial class NewUser : Form
     {
+        private string connectionString;
+
         public NewUser()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
+            string nom = textBox1.Text;
+            string prenom = textBox2.Text;
+            string dateNaissance = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string login = textBox4.Text;
+            string password = textBox5.Text;
 
+            string query = "INSERT INTO Medecin (nom_m, prenom_m, date_naissance_m, login_m, password_m) " +
+                           "VALUES (@Nom, @Prenom, @DateNaissance, @Login, @Password)";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nom", nom);
+                    command.Parameters.AddWithValue("@Prenom", prenom);
+                    command.Parameters.AddWithValue("@DateNaissance", dateNaissance);
+                    command.Parameters.AddWithValue("@Login", login);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Utilisateur créé avec succès !");
+                        // Réinitialiser les champs de saisie
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        dateTimePicker1.Value = DateTime.Now;
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de la création de l'utilisateur.");
+                    }
+                }
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

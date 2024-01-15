@@ -39,9 +39,9 @@
             label5 = new Label();
             label6 = new Label();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,16 +54,17 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(349, 466);
+            button1.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(232, 463);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(337, 39);
             button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Text = "Crée Votre Compte";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -75,7 +76,6 @@
             label1.Size = new Size(494, 54);
             label1.TabIndex = 2;
             label1.Text = "Creation d'un nouveau compte";
-            label1.Click += label1_Click;
             // 
             // textBox1
             // 
@@ -84,7 +84,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(167, 28);
             textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -96,7 +95,6 @@
             label2.Size = new Size(51, 28);
             label2.TabIndex = 4;
             label2.Text = "Nom";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -108,7 +106,6 @@
             label3.Size = new Size(75, 28);
             label3.TabIndex = 6;
             label3.Text = "Prenom";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -131,7 +128,6 @@
             label5.Size = new Size(155, 28);
             label5.TabIndex = 9;
             label5.Text = "Nom D'utilisateur";
-            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -152,14 +148,6 @@
             textBox2.Size = new Size(167, 28);
             textBox2.TabIndex = 11;
             // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(402, 326);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(167, 28);
-            textBox3.TabIndex = 12;
-            // 
             // textBox4
             // 
             textBox4.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -176,14 +164,25 @@
             textBox5.Size = new Size(167, 28);
             textBox5.TabIndex = 14;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker1.Font = new Font("News Gothic Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(402, 326);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(167, 29);
+            dateTimePicker1.TabIndex = 15;
+            dateTimePicker1.Value = new DateTime(2024, 1, 15, 0, 0, 0, 0);
+            // 
             // NewUser
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(889, 539);
+            Controls.Add(dateTimePicker1);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -195,7 +194,7 @@
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Name = "NewUser";
-            Text = "NewUser";
+            Text = "ZZPharma | Sign Up";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -213,8 +212,8 @@
         private Label label5;
         private Label label6;
         private TextBox textBox2;
-        private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
+        private DateTimePicker dateTimePicker1;
     }
 }

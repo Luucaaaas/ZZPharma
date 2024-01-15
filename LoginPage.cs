@@ -74,7 +74,7 @@ namespace ZZinventory
             // 
             // pictureBox1
             // 
-            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
+            pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
@@ -129,6 +129,7 @@ namespace ZZinventory
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Name = "LoginPage";
+            Text = "ZZPharma | Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
