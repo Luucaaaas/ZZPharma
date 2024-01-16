@@ -25,7 +25,6 @@ namespace ZZinventory
             string login = textBox4.Text;
             string password = textBox5.Text;
 
-            // Vérifier si l'une des cases est vide
             if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom) || string.IsNullOrWhiteSpace(dateNaissance) ||
                 string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
@@ -33,7 +32,6 @@ namespace ZZinventory
                 return;
             }
 
-            // Hasher le mot de passe avec BCrypt
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
             string query = "INSERT INTO Medecin (nom_m, prenom_m, date_naissance_m, login_m, password_m) " +
@@ -56,7 +54,7 @@ namespace ZZinventory
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Utilisateur créé avec succès !");
-                        // Réinitialiser les champs de saisie
+
                         textBox1.Text = "";
                         textBox2.Text = "";
                         dateTimePicker1.Value = DateTime.Now;
@@ -70,5 +68,7 @@ namespace ZZinventory
                 }
             }
         }
+
+
     }
 }

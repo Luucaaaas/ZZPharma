@@ -11,7 +11,6 @@ namespace ZZinventory
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Instancie et affiche la page de connexion
             Application.Run(new LoginPage());
         }
     }

@@ -33,7 +33,7 @@ namespace ZZinventory
             // txtUsername
             // 
             txtUsername.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(324, 53);
+            txtUsername.Location = new Point(426, 43);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(291, 32);
             txtUsername.TabIndex = 0;
@@ -42,7 +42,7 @@ namespace ZZinventory
             // txtPassword
             // 
             txtPassword.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(324, 134);
+            txtPassword.Location = new Point(426, 129);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(291, 32);
@@ -53,7 +53,7 @@ namespace ZZinventory
             // 
             label1.AutoSize = true;
             label1.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(324, 22);
+            label1.Location = new Point(426, 12);
             label1.Name = "label1";
             label1.Size = new Size(155, 28);
             label1.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace ZZinventory
             // 
             label2.AutoSize = true;
             label2.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(324, 103);
+            label2.Location = new Point(426, 87);
             label2.Name = "label2";
             label2.Size = new Size(123, 28);
             label2.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace ZZinventory
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(291, 149);
+            pictureBox1.Size = new Size(400, 215);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -83,7 +83,7 @@ namespace ZZinventory
             // btnLogin
             // 
             btnLogin.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.Location = new Point(367, 205);
+            btnLogin.Location = new Point(481, 179);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(165, 39);
             btnLogin.TabIndex = 5;
@@ -94,7 +94,7 @@ namespace ZZinventory
             // button1
             // 
             button1.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(12, 195);
+            button1.Location = new Point(12, 233);
             button1.Name = "button1";
             button1.Size = new Size(165, 39);
             button1.TabIndex = 6;
@@ -106,7 +106,7 @@ namespace ZZinventory
             // 
             label3.AutoSize = true;
             label3.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(23, 164);
+            label3.Location = new Point(183, 244);
             label3.Name = "label3";
             label3.Size = new Size(145, 28);
             label3.TabIndex = 7;
@@ -114,7 +114,7 @@ namespace ZZinventory
             // 
             // LoginPage
             // 
-            ClientSize = new Size(629, 272);
+            ClientSize = new Size(729, 278);
             Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(btnLogin);
@@ -123,6 +123,7 @@ namespace ZZinventory
             Controls.Add(label1);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
+            Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "LoginPage";
             Text = "ZZPharma | Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -170,8 +171,8 @@ namespace ZZinventory
 
             if (AuthenticateUser(login, password))
             {
-                ZZhome ZZhome = new ZZhome();
-                ZZhome.Show();
+                Home Home = new Home();
+                Home.Show();
                 this.Hide();
             }
             else

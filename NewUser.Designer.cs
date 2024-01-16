@@ -48,9 +48,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(232, 81);
+            pictureBox1.Location = new Point(12, 13);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(337, 174);
+            pictureBox1.Size = new Size(400, 215);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -58,9 +59,10 @@
             // button1
             // 
             button1.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(232, 463);
+            button1.Location = new Point(226, 236);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(337, 39);
+            button1.Size = new Size(400, 49);
             button1.TabIndex = 1;
             button1.Text = "Crée Votre Compte";
             button1.UseVisualStyleBackColor = true;
@@ -69,27 +71,28 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("News Gothic Condensed", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(181, 24);
+            label1.Font = new Font("News Gothic Condensed", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(418, 9);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(494, 54);
+            label1.Size = new Size(380, 42);
             label1.TabIndex = 2;
             label1.Text = "Creation d'un nouveau compte";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(402, 258);
+            textBox1.Location = new Point(590, 55);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(167, 28);
+            textBox1.Size = new Size(208, 28);
             textBox1.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(232, 258);
+            label2.Location = new Point(418, 55);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.No;
             label2.Size = new Size(51, 28);
@@ -100,7 +103,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(232, 292);
+            label3.Location = new Point(418, 91);
             label3.Name = "label3";
             label3.RightToLeft = RightToLeft.No;
             label3.Size = new Size(75, 28);
@@ -111,7 +114,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(232, 326);
+            label4.Location = new Point(420, 128);
             label4.Name = "label4";
             label4.RightToLeft = RightToLeft.No;
             label4.Size = new Size(164, 28);
@@ -122,7 +125,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(232, 360);
+            label5.Location = new Point(420, 164);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(155, 28);
@@ -133,7 +136,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(232, 394);
+            label6.Location = new Point(420, 200);
             label6.Name = "label6";
             label6.RightToLeft = RightToLeft.No;
             label6.Size = new Size(123, 28);
@@ -143,25 +146,29 @@
             // textBox2
             // 
             textBox2.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(402, 292);
+            textBox2.Location = new Point(590, 91);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(167, 28);
+            textBox2.Size = new Size(208, 28);
             textBox2.TabIndex = 11;
             // 
             // textBox4
             // 
             textBox4.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(402, 360);
+            textBox4.Location = new Point(590, 164);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(167, 28);
+            textBox4.Size = new Size(208, 28);
             textBox4.TabIndex = 13;
             // 
             // textBox5
             // 
             textBox5.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(402, 397);
+            textBox5.Location = new Point(590, 200);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(167, 28);
+            textBox5.PasswordChar = '*';
+            textBox5.Size = new Size(208, 28);
             textBox5.TabIndex = 14;
             // 
             // dateTimePicker1
@@ -169,17 +176,18 @@
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             dateTimePicker1.Font = new Font("News Gothic Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(402, 326);
+            dateTimePicker1.Location = new Point(590, 127);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(167, 29);
+            dateTimePicker1.Size = new Size(208, 29);
             dateTimePicker1.TabIndex = 15;
             dateTimePicker1.Value = new DateTime(2024, 1, 15, 0, 0, 0, 0);
             // 
             // NewUser
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(889, 539);
+            ClientSize = new Size(814, 304);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
@@ -193,6 +201,8 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
+            Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "NewUser";
             Text = "ZZPharma | Sign Up";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
