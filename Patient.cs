@@ -15,6 +15,12 @@ namespace ZZinventory
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
             ChargerDonnees();
+            this.Activated += Patient_activated;
+        }
+
+        private void Patient_activated(object sender,EventArgs e)
+        {
+            ChargerDonnees();
         }
 
         private void ChargerDonnees()
