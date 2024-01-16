@@ -36,7 +36,6 @@
             dataGridView1 = new DataGridView();
             label1 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -124,22 +123,11 @@
             label2.TabIndex = 7;
             label2.Text = "Description";
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(28, 455);
-            comboBox1.Margin = new Padding(4, 4, 4, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(435, 33);
-            comboBox1.TabIndex = 8;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
             // ZZhome
             // 
             AutoScaleDimensions = new SizeF(9F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1094, 550);
-            Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
@@ -168,6 +156,5 @@
         private DataGridView dataGridView1;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox1;
     }
 }

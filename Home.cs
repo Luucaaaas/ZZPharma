@@ -20,8 +20,8 @@ namespace ZZinventory
 
         private void btnPatients_Click(object sender, EventArgs e)
         {
-            Home Home = new Home();
-            Home.Show();
+            Patient Patient = new Patient();
+            Patient.Show();
             this.Hide();
         }
 

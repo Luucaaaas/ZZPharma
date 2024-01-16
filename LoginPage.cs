@@ -33,19 +33,19 @@ namespace ZZinventory
             // txtUsername
             // 
             txtUsername.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(426, 43);
+            txtUsername.Location = new Point(358, 262);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(291, 32);
+            txtUsername.Size = new Size(242, 32);
             txtUsername.TabIndex = 0;
             txtUsername.KeyPress += txtUsername_KeyPress;
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(426, 129);
+            txtPassword.Location = new Point(358, 300);
             txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(291, 32);
+            txtPassword.PasswordChar = '•';
+            txtPassword.Size = new Size(242, 32);
             txtPassword.TabIndex = 1;
             txtPassword.KeyPress += txtPassword_KeyPress_1;
             // 
@@ -53,7 +53,7 @@ namespace ZZinventory
             // 
             label1.AutoSize = true;
             label1.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(426, 12);
+            label1.Location = new Point(197, 266);
             label1.Name = "label1";
             label1.Size = new Size(155, 28);
             label1.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace ZZinventory
             // 
             label2.AutoSize = true;
             label2.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(426, 87);
+            label2.Location = new Point(200, 304);
             label2.Name = "label2";
             label2.Size = new Size(123, 28);
             label2.TabIndex = 3;
@@ -73,17 +73,18 @@ namespace ZZinventory
             // 
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(200, -50);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(400, 215);
+            pictureBox1.Size = new Size(400, 300);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnLogin
             // 
             btnLogin.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.Location = new Point(481, 179);
+            btnLogin.Location = new Point(307, 338);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(165, 39);
             btnLogin.TabIndex = 5;
@@ -94,7 +95,7 @@ namespace ZZinventory
             // button1
             // 
             button1.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(12, 233);
+            button1.Location = new Point(307, 454);
             button1.Name = "button1";
             button1.Size = new Size(165, 39);
             button1.TabIndex = 6;
@@ -105,16 +106,16 @@ namespace ZZinventory
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(183, 244);
+            label3.Font = new Font("News Gothic Condensed", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(310, 420);
             label3.Name = "label3";
-            label3.Size = new Size(145, 28);
+            label3.Size = new Size(156, 31);
             label3.TabIndex = 7;
             label3.Text = "Pas de compte ?";
             // 
             // LoginPage
             // 
-            ClientSize = new Size(729, 278);
+            ClientSize = new Size(782, 503);
             Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(btnLogin);
@@ -124,8 +125,13 @@ namespace ZZinventory
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(800, 550);
+            MinimizeBox = false;
+            MinimumSize = new Size(800, 550);
             Name = "LoginPage";
-            Text = "ZZPharma | Login";
+            Text = "GSBPharma | Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -201,6 +207,11 @@ namespace ZZinventory
         {
             NewUser NewUser = new NewUser();
             NewUser.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
