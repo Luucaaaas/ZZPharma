@@ -25,7 +25,15 @@ namespace ZZinventory
             string login = textBox4.Text;
             string password = textBox5.Text;
 
-            // Hash the password using BCrypt
+            // Vérifier si l'une des cases est vide
+            if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom) || string.IsNullOrWhiteSpace(dateNaissance) ||
+                string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Hasher le mot de passe avec BCrypt
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
             string query = "INSERT INTO Medecin (nom_m, prenom_m, date_naissance_m, login_m, password_m) " +
