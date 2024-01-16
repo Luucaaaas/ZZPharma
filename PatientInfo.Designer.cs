@@ -36,6 +36,8 @@
             label2 = new Label();
             label3 = new Label();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(205, 131);
+            button1.Location = new Point(23, 262);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 3;
@@ -110,11 +112,31 @@
             dataGridView1.Size = new Size(300, 188);
             dataGridView1.TabIndex = 8;
             // 
+            // button2
+            // 
+            button2.Location = new Point(422, 332);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 9;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(395, 283);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 10;
+            // 
             // PatientInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(932, 504);
+            Controls.Add(comboBox1);
+            Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -140,5 +162,7 @@
         private Label label2;
         private Label label3;
         private DataGridView dataGridView1;
+        private Button button2;
+        private ComboBox comboBox1;
     }
 }

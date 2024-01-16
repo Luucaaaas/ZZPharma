@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using BCrypt.Net;
 
-namespace ZZinventory
+namespace ZZinventory.Connexion
 {
     public partial class LoginPage : Form
     {
@@ -179,7 +179,7 @@ namespace ZZinventory
             {
                 Home Home = new Home();
                 Home.Show();
-                this.Hide();
+                Hide();
             }
             else
             {

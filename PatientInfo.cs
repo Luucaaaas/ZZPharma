@@ -17,69 +17,94 @@ namespace ZZinventory
 
             patientId = id;
 
-            // Afficher les informations du patient dans les TextBox
             txtNom.Text = nom;
             txtPrenom.Text = prenom;
             cmbSexe.Text = sexe;
+            ChargerAntecedents();
 
-            // Charger les antécédents du patient
+        }
+
+        private void PatientInfo_activated(object sender, EventArgs e)
+        {
             ChargerAntecedents();
         }
 
         private void ChargerAntecedents()
         {
-            // Charger la table Antecedent
-            string antecedentQuery = "SELECT id_a, libelle_a FROM Antecedent";
-            DataTable antecedentTable = new DataTable();
+            string query = "SELECT id_a, libelle_a FROM Antecedent";
+
+            DataTable antecedentsTable = new DataTable();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand(antecedentQuery, connection))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                     {
-                        adapter.Fill(antecedentTable);
+                        adapter.Fill(antecedentsTable);
                     }
                 }
             }
 
-            // Charger la table a_eu
-            string aEuQuery = "SELECT id_a FROM a_eu WHERE id_p = @patientId";
-            DataTable aEuTable = new DataTable();
+            comboBox1.DisplayMember = "libelle_a";
+            comboBox1.ValueMember = "id_a";
+            comboBox1.DataSource = antecedentsTable;
+
+            string selectQuery = "SELECT Antecedent.id_a, Antecedent.libelle_a FROM Antecedent INNER JOIN a_eu ON Antecedent.id_a = a_eu.id_a WHERE a_eu.id_p = @patientId";
+
+            DataTable patientAntecedentsTable = new DataTable();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand(aEuQuery, connection))
+                using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
                 {
                     command.Parameters.AddWithValue("@patientId", patientId);
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                     {
-                        adapter.Fill(aEuTable);
+                        adapter.Fill(patientAntecedentsTable);
                     }
                 }
             }
 
-            // Fusionner les tables Antecedent et a_eu pour obtenir les antécédents du patient
-            DataTable patientAntecedents = new DataTable();
-            patientAntecedents.Columns.Add("id_a", typeof(int));
-            patientAntecedents.Columns.Add("libelle_a", typeof(string));
+            dataGridView1.DataSource = patientAntecedentsTable;
+        }
 
-            foreach (DataRow aEuRow in aEuTable.Rows)
+        private void AjouterAntecedent(string antecedentId)
+        {
+            string selectQuery = "SELECT COUNT(*) FROM a_eu WHERE id_p = @patientId AND id_a = @antecedentId";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                int antecedentId = Convert.ToInt32(aEuRow["id_a"]);
-
-                DataRow[] antecedentRows = antecedentTable.Select("id_a = " + antecedentId);
-
-                if (antecedentRows.Length > 0)
+                using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
                 {
-                    DataRow antecedentRow = antecedentRows[0];
-                    patientAntecedents.Rows.Add(antecedentRow.ItemArray);
+                    command.Parameters.AddWithValue("@patientId", patientId);
+                    command.Parameters.AddWithValue("@antecedentId", antecedentId);
+
+                    connection.Open();
+
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (count == 0)
+                    {
+                        string insertQuery = "INSERT INTO a_eu (id_p, id_a) VALUES (@patientId, @antecedentId)";
+
+                        using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection))
+                        {
+                            insertCommand.Parameters.AddWithValue("@patientId", patientId);
+                            insertCommand.Parameters.AddWithValue("@antecedentId", antecedentId);
+
+                            insertCommand.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("L'antécédent sélectionné existe déjà pour ce patient.", "Doublon d'antécédent", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    connection.Close();
                 }
             }
-
-            // Afficher les antécédents du patient dans le DataGridView
-            dataGridView1.DataSource = patientAntecedents;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,7 +113,7 @@ namespace ZZinventory
             string prenom = txtPrenom.Text;
             string sexe = cmbSexe.Text;
 
-            string query = "UPDATE Patient SET non_p = @nom, prenom_p = @prenom, sexe = @sexe WHERE id_p = @id";
+            string query = "UPDATE Patient SET nom_p = @nom, prenom_p = @prenom, sexe = @sexe WHERE id_p = @id";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -107,7 +132,17 @@ namespace ZZinventory
             MessageBox.Show("Les informations du patient ont été mises à jour avec succès.", "Mise à jour réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string antecedentId = comboBox1.SelectedValue.ToString();
+                AjouterAntecedent(antecedentId);
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un antécédent à ajouter.", "Sélectionner un antécédent", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
-
-
