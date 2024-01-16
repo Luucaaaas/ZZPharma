@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using BCrypt.Net;
 
-namespace ZZinventory.Connexion
+namespace ZZinventory
 {
     public partial class LoginPage : Form
     {

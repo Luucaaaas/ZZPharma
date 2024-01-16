@@ -21,10 +21,9 @@ namespace ZZinventory
             txtPrenom.Text = prenom;
             cmbSexe.Text = sexe;
             ChargerAntecedents();
-
         }
 
-        private void PatientInfo_activated(object sender, EventArgs e)
+        private void PatientInfo_Load(object sender, EventArgs e)
         {
             ChargerAntecedents();
         }
@@ -96,13 +95,13 @@ namespace ZZinventory
 
                             insertCommand.ExecuteNonQuery();
                         }
+
+                        MessageBox.Show("L'antécédent a été ajouté avec succès.", "Ajout réussi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         MessageBox.Show("L'antécédent sélectionné existe déjà pour ce patient.", "Doublon d'antécédent", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
-                    connection.Close();
                 }
             }
         }
@@ -138,6 +137,7 @@ namespace ZZinventory
             {
                 string antecedentId = comboBox1.SelectedValue.ToString();
                 AjouterAntecedent(antecedentId);
+                ChargerAntecedents(); 
             }
             else
             {
