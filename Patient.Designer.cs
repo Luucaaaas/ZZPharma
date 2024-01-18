@@ -51,27 +51,27 @@
             label1.AutoSize = true;
             label1.Location = new Point(27, 49);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(42, 20);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "Nom";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(207, 46);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(60, 20);
             label2.TabIndex = 2;
-            label2.Text = "label2";
+            label2.Text = "Prenom";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(397, 47);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(40, 20);
             label3.TabIndex = 3;
-            label3.Text = "label3";
+            label3.Text = "Sexe";
             // 
             // txtPrenom
             // 
@@ -115,7 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(951, 499);
             Controls.Add(dataGridView1);
             Controls.Add(cmbSexe);
             Controls.Add(button1);

@@ -260,10 +260,31 @@ namespace ZZinventory
 
                     connection.Open();
                     command.ExecuteNonQuery();
+                    connection.Close();
                 }
             }
 
             MessageBox.Show("L'antécédent a été supprimé avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void SupprimerAllergie(string allergieId)
+        {
+            string deleteQuery = "DELETE FROM est WHERE id_p = @patientId AND id_al = @allergieId";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@patientId", patientId);
+                    command.Parameters.AddWithValue("@allergieId", allergieId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+
+            MessageBox.Show("L'allergie a été supprimée avec succès.", "Suppression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AjouterNouvelAntecedent(string nouvelAntecedent)
@@ -278,10 +299,30 @@ namespace ZZinventory
 
                     connection.Open();
                     command.ExecuteNonQuery();
+                    connection.Close();
                 }
             }
 
             MessageBox.Show("Le nouvel antécédent a été ajouté avec succès.", "Ajout réussi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AjouterNouvelleAllergie(string nouvelleAllergie)
+        {
+            string insertQuery = "INSERT INTO Allergie (libelle_al) VALUES (@libelle)";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@libelle", nouvelleAllergie);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+
+            MessageBox.Show("La nouvelle allergie a été ajoutée avec succès.", "Ajout réussi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnModifier_Click(object sender, EventArgs e)
@@ -345,10 +386,25 @@ namespace ZZinventory
                 DataGridViewRow selectedRow = PatientANT.Rows[e.RowIndex];
                 string antecedentId = selectedRow.Cells["id_a"].Value.ToString();
 
-                if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet antécédent ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette antécédent ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     SupprimerAntecedent(antecedentId);
                     ChargerAntecedents();
+                }
+            }
+        }
+
+        private void PatientALL_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = PatientALL.Rows[e.RowIndex];
+                string AllergieId = selectedRow.Cells["id_al"].Value.ToString();
+
+                if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet allergie ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SupprimerAllergie(AllergieId);
+                    ChargerAllergies();
                 }
             }
         }
@@ -366,6 +422,22 @@ namespace ZZinventory
             else
             {
                 MessageBox.Show("Veuillez entrer un nouvel antécédent.", "Antécédent manquant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnAllergie_Click(object sender, EventArgs e)
+        {
+            string nouvelAllergie = textBox2.Text;
+
+            if (!string.IsNullOrEmpty(nouvelAllergie))
+            {
+                AjouterNouvelleAllergie(nouvelAllergie);
+                ChargerAllergies();
+                textBox2.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez entrer une nouvelle Allergie.", "Allergie manquante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -398,5 +470,6 @@ namespace ZZinventory
                 }
             }
         }
+
     }
 }

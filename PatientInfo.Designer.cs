@@ -48,7 +48,7 @@
             comboBoxAllergies = new ComboBox();
             BtnADDall = new Button();
             textBox2 = new TextBox();
-            button5 = new Button();
+            btnAllergie = new Button();
             PatientALL = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)PatientANT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAntecedents).BeginInit();
@@ -152,17 +152,34 @@
             // comboBox1
             // 
             comboBox1.Cursor = Cursors.Hand;
-            comboBox1.DropDownHeight = 22;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.DropDownWidth = 151;
             comboBox1.IntegralHeight = false;
             comboBox1.ItemHeight = 25;
             comboBox1.Location = new Point(59, 119);
             comboBox1.Margin = new Padding(4);
-            comboBox1.MaxDropDownItems = 5;
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(215, 33);
             comboBox1.TabIndex = 10;
+            comboBox1.MaxDropDownItems = 5;
+            comboBox1.DropDownHeight = comboBox1.ItemHeight * comboBox1.MaxDropDownItems;
+            // 
+            // comboBoxAllergies
+            // 
+            comboBoxAllergies.Cursor = Cursors.Hand;
+            comboBoxAllergies.DropDownHeight = 22;
+            comboBoxAllergies.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAllergies.DropDownWidth = 151;
+            comboBoxAllergies.IntegralHeight = false;
+            comboBoxAllergies.ItemHeight = 25;
+            comboBoxAllergies.Location = new Point(59, 209);
+            comboBoxAllergies.Margin = new Padding(4);
+            comboBoxAllergies.MaxDropDownItems = 5;
+            comboBoxAllergies.Name = "comboBoxAllergies";
+            comboBoxAllergies.Size = new Size(215, 33);
+            comboBoxAllergies.TabIndex = 18;
+            comboBoxAllergies.MaxDropDownItems = 5;
+            comboBoxAllergies.DropDownHeight = comboBoxAllergies.ItemHeight * comboBoxAllergies.MaxDropDownItems;
             // 
             // btnCREERant
             // 
@@ -225,21 +242,6 @@
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
             // 
-            // comboBoxAllergies
-            // 
-            comboBoxAllergies.Cursor = Cursors.Hand;
-            comboBoxAllergies.DropDownHeight = 22;
-            comboBoxAllergies.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxAllergies.DropDownWidth = 151;
-            comboBoxAllergies.IntegralHeight = false;
-            comboBoxAllergies.ItemHeight = 25;
-            comboBoxAllergies.Location = new Point(59, 209);
-            comboBoxAllergies.Margin = new Padding(4);
-            comboBoxAllergies.MaxDropDownItems = 5;
-            comboBoxAllergies.Name = "comboBoxAllergies";
-            comboBoxAllergies.Size = new Size(215, 33);
-            comboBoxAllergies.TabIndex = 18;
-            // 
             // BtnADDall
             // 
             BtnADDall.Location = new Point(282, 209);
@@ -259,15 +261,16 @@
             textBox2.Size = new Size(161, 32);
             textBox2.TabIndex = 21;
             // 
-            // button5
+            // btnAllergie
             // 
-            button5.Location = new Point(960, 622);
-            button5.Margin = new Padding(4);
-            button5.Name = "button5";
-            button5.Size = new Size(161, 36);
-            button5.TabIndex = 20;
-            button5.Text = "Créer Allergie";
-            button5.UseVisualStyleBackColor = true;
+            btnAllergie.Location = new Point(960, 622);
+            btnAllergie.Margin = new Padding(4);
+            btnAllergie.Name = "btnAllergie";
+            btnAllergie.Size = new Size(161, 36);
+            btnAllergie.TabIndex = 20;
+            btnAllergie.Text = "Créer Allergie";
+            btnAllergie.UseVisualStyleBackColor = true;
+            btnAllergie.Click += btnAllergie_Click;
             // 
             // PatientALL
             // 
@@ -279,6 +282,7 @@
             PatientALL.RowTemplate.Height = 29;
             PatientALL.Size = new Size(377, 155);
             PatientALL.TabIndex = 22;
+            PatientALL.CellContentDoubleClick += PatientALL_CellContentDoubleClick;
             // 
             // PatientInfo
             // 
@@ -288,7 +292,7 @@
             ClientSize = new Size(1163, 864);
             Controls.Add(PatientALL);
             Controls.Add(textBox2);
-            Controls.Add(button5);
+            Controls.Add(btnAllergie);
             Controls.Add(BtnADDall);
             Controls.Add(comboBoxAllergies);
             Controls.Add(pictureBox3);
@@ -343,7 +347,7 @@
         private ComboBox comboBoxAllergies;
         private Button BtnADDall;
         private TextBox textBox2;
-        private Button button5;
+        private Button btnAllergie;
         private DataGridView PatientALL;
     }
 }
