@@ -25,7 +25,7 @@ namespace ZZinventory
 
         private void ChargerDonnees()
         {
-            string query = "SELECT id_p, non_p, prenom_p, sexe FROM Patient";
+            string query = "SELECT id_p, nom_p, prenom_p, sexe FROM Patient";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -46,9 +46,11 @@ namespace ZZinventory
                 }
             }
         }
+
+
         private void AjouterPatient(string nom, string prenom, string sexe)
         {
-            string query = "INSERT INTO Patient (non_p, prenom_p, sexe) VALUES (@nom, @prenom, @sexe)";
+            string query = "INSERT INTO Patient (nom_p, prenom_p, sexe) VALUES (@nom, @prenom, @sexe)";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -60,6 +62,7 @@ namespace ZZinventory
 
                     connection.Open();
                     command.ExecuteNonQuery();
+                    connection.Close();
                 }
             }
         }
@@ -75,6 +78,9 @@ namespace ZZinventory
                 MessageBox.Show("Veuillez remplir tous les champs du formulaire.", "Champ(s) manquant(s)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            MessageBox.Show("Le patient a été ajouté avec succès.", "Ajout réussi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
 
             AjouterPatient(nom, prenom, sexe);
 
@@ -92,7 +98,7 @@ namespace ZZinventory
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
                 string id = row.Cells["id_p"].Value.ToString();
-                string nom = row.Cells["non_p"].Value.ToString();
+                string nom = row.Cells["nom_p"].Value.ToString();
                 string prenom = row.Cells["prenom_p"].Value.ToString();
                 string sexe = row.Cells["sexe"].Value.ToString();
 

@@ -59,7 +59,7 @@
             // button1
             // 
             button1.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(239, 474);
+            button1.Location = new Point(200, 481);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(400, 49);
@@ -72,7 +72,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("News Gothic Condensed", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(239, 247);
+            label1.Location = new Point(200, 254);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
             label1.Size = new Size(380, 42);
@@ -82,17 +82,17 @@
             // textBox1
             // 
             textBox1.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(411, 293);
+            textBox1.Location = new Point(372, 300);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(208, 28);
+            textBox1.Size = new Size(228, 28);
             textBox1.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(239, 293);
+            label2.Location = new Point(200, 300);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.No;
             label2.Size = new Size(51, 28);
@@ -103,7 +103,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(239, 329);
+            label3.Location = new Point(200, 336);
             label3.Name = "label3";
             label3.RightToLeft = RightToLeft.No;
             label3.Size = new Size(75, 28);
@@ -114,7 +114,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(241, 366);
+            label4.Location = new Point(202, 373);
             label4.Name = "label4";
             label4.RightToLeft = RightToLeft.No;
             label4.Size = new Size(164, 28);
@@ -125,7 +125,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(241, 402);
+            label5.Location = new Point(202, 409);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(155, 28);
@@ -136,7 +136,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("News Gothic Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(241, 438);
+            label6.Location = new Point(202, 445);
             label6.Name = "label6";
             label6.RightToLeft = RightToLeft.No;
             label6.Size = new Size(123, 28);
@@ -146,29 +146,29 @@
             // textBox2
             // 
             textBox2.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(411, 329);
+            textBox2.Location = new Point(372, 336);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(208, 28);
+            textBox2.Size = new Size(228, 28);
             textBox2.TabIndex = 11;
             // 
             // textBox4
             // 
             textBox4.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(411, 402);
+            textBox4.Location = new Point(372, 409);
             textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(208, 28);
+            textBox4.Size = new Size(228, 28);
             textBox4.TabIndex = 13;
             // 
             // textBox5
             // 
             textBox5.Font = new Font("News Gothic Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(411, 438);
+            textBox5.Location = new Point(372, 445);
             textBox5.Margin = new Padding(3, 4, 3, 4);
             textBox5.Name = "textBox5";
             textBox5.PasswordChar = '•';
-            textBox5.Size = new Size(208, 28);
+            textBox5.Size = new Size(228, 28);
             textBox5.TabIndex = 14;
             // 
             // dateTimePicker1
@@ -176,10 +176,10 @@
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             dateTimePicker1.Font = new Font("News Gothic Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(411, 365);
+            dateTimePicker1.Location = new Point(372, 372);
             dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(208, 29);
+            dateTimePicker1.Size = new Size(228, 29);
             dateTimePicker1.TabIndex = 15;
             dateTimePicker1.Value = new DateTime(2024, 1, 15, 0, 0, 0, 0);
             // 
@@ -202,9 +202,14 @@
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MaximumSize = new Size(800, 600);
+            MinimizeBox = false;
+            MinimumSize = new Size(800, 600);
             Name = "NewUser";
-            Text = "ZZPharma | Sign Up";
+            Text = "GSBPharma | Sign Up";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
