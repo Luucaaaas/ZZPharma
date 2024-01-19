@@ -18,8 +18,27 @@ namespace ZZinventory
             txtNom.Text = nom;
             txtPrenom.Text = prenom;
             cmbSexe.Text = sexe;
+            txtPAT.Text = nom + ", " + prenom;
+            txtSEXE.Text = sexe;
             ChargerAntecedents();
             ChargerAllergies();
+            comboBox1.MaxDropDownItems = 5;
+            comboBox1.DropDownHeight = comboBox1.ItemHeight * comboBox1.MaxDropDownItems;
+            comboBoxAllergies.MaxDropDownItems = 5;
+            comboBoxAllergies.DropDownHeight = comboBoxAllergies.ItemHeight * comboBoxAllergies.MaxDropDownItems;
+            PatientANT.ReadOnly = true;
+            PatientALL.ReadOnly = true;
+            dataGridViewAntecedents.ReadOnly = true;
+            dataGridViewAllergies.ReadOnly = true;
+
+            if (sexe.ToLower() == "homme")
+            {
+                txtSEXE.Text = "Monsieur";
+            }
+            else if (sexe.ToLower() == "femme")
+            {
+                txtSEXE.Text = "Madame";
+            }
         }
 
 
@@ -470,6 +489,5 @@ namespace ZZinventory
                 }
             }
         }
-
     }
 }

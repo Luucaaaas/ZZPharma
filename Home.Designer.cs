@@ -33,7 +33,9 @@
             btnOrdo = new Button();
             btnmedica = new Button();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnPatients
@@ -79,11 +81,22 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-25, 256);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(852, 5);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(9F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 353);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnmedica);
             Controls.Add(btnOrdo);
@@ -94,6 +107,7 @@
             Name = "Home";
             Text = "GSBPharma | Home";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -103,5 +117,6 @@
         private Button btnOrdo;
         private Button btnmedica;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

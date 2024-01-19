@@ -34,8 +34,8 @@ namespace ZZinventory
 
         private void btnmedica_Click(object sender, EventArgs e)
         {
-            ZZhome ZZhome = new ZZhome();
-            ZZhome.Show();
+            Medicament Medicament = new Medicament();
+            Medicament.Show();
             this.Hide();
         }
 

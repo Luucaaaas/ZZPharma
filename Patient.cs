@@ -16,9 +16,29 @@ namespace ZZinventory
             connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
             ChargerDonnees();
             this.Activated += Patient_activated;
+
+            foreach (DataGridViewColumn column in this.dataGridView1.Columns)
+            {
+                if (column.Name == "id_p")
+                {
+                    column.Visible = false;
+                }
+                else if (column.Name == "nom_p")
+                {
+                    column.HeaderText = "Nom";
+                }
+                else if (column.Name == "prenom_p")
+                {
+                    column.HeaderText = "Prénom";
+                }
+                else if (column.Name == "sexe")
+                {
+                    column.HeaderText = "Sexe";
+                }
+            }
         }
 
-        private void Patient_activated(object sender,EventArgs e)
+        private void Patient_activated(object sender, EventArgs e)
         {
             ChargerDonnees();
         }
@@ -80,7 +100,7 @@ namespace ZZinventory
             }
 
             MessageBox.Show("Le patient a été ajouté avec succès.", "Ajout réussi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
 
             AjouterPatient(nom, prenom, sexe);
 
@@ -105,6 +125,13 @@ namespace ZZinventory
                 PatientInfo patientInfoForm = new PatientInfo(id, nom, prenom, sexe);
                 patientInfoForm.Show();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home Home = new Home();
+            Home.Show();
+            Hide();
         }
     }
 }

@@ -50,6 +50,10 @@
             textBox2 = new TextBox();
             btnAllergie = new Button();
             PatientALL = new DataGridView();
+            reccupNom = new Label();
+            label4 = new Label();
+            txtPAT = new Label();
+            txtSEXE = new Label();
             ((System.ComponentModel.ISupportInitialize)PatientANT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAntecedents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAllergies).BeginInit();
@@ -60,26 +64,26 @@
             // 
             // txtNom
             // 
-            txtNom.Location = new Point(13, 43);
+            txtNom.Location = new Point(13, 85);
             txtNom.Margin = new Padding(4);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(140, 32);
+            txtNom.Size = new Size(170, 32);
             txtNom.TabIndex = 0;
             // 
             // txtPrenom
             // 
-            txtPrenom.Location = new Point(161, 43);
+            txtPrenom.Location = new Point(13, 150);
             txtPrenom.Margin = new Padding(4);
             txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(140, 32);
+            txtPrenom.Size = new Size(170, 32);
             txtPrenom.TabIndex = 1;
             // 
             // BtnModifier
             // 
-            BtnModifier.Location = new Point(485, 40);
+            BtnModifier.Location = new Point(13, 250);
             BtnModifier.Margin = new Padding(4);
             BtnModifier.Name = "BtnModifier";
-            BtnModifier.Size = new Size(105, 36);
+            BtnModifier.Size = new Size(170, 36);
             BtnModifier.TabIndex = 3;
             BtnModifier.Text = "Modifier";
             BtnModifier.UseVisualStyleBackColor = true;
@@ -90,7 +94,7 @@
             cmbSexe.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSexe.FormattingEnabled = true;
             cmbSexe.Items.AddRange(new object[] { "Homme", "Femme" });
-            cmbSexe.Location = new Point(309, 42);
+            cmbSexe.Location = new Point(13, 207);
             cmbSexe.Margin = new Padding(4);
             cmbSexe.Name = "cmbSexe";
             cmbSexe.Size = new Size(170, 33);
@@ -99,7 +103,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 14);
+            label1.Location = new Point(13, 56);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(45, 25);
@@ -109,7 +113,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(161, 14);
+            label2.Location = new Point(13, 121);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(67, 25);
@@ -119,7 +123,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(309, 12);
+            label3.Location = new Point(13, 186);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(45, 25);
@@ -128,10 +132,17 @@
             // 
             // PatientANT
             // 
+            PatientANT.AllowUserToAddRows = false;
+            PatientANT.AllowUserToDeleteRows = false;
+            PatientANT.AllowUserToResizeColumns = false;
+            PatientANT.AllowUserToResizeRows = false;
             PatientANT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PatientANT.Location = new Point(598, 40);
+            PatientANT.EnableHeadersVisualStyles = false;
+            PatientANT.Location = new Point(773, 9);
             PatientANT.Margin = new Padding(4);
+            PatientANT.MultiSelect = false;
             PatientANT.Name = "PatientANT";
+            PatientANT.ReadOnly = true;
             PatientANT.RowHeadersWidth = 51;
             PatientANT.RowTemplate.Height = 29;
             PatientANT.Size = new Size(377, 155);
@@ -140,7 +151,7 @@
             // 
             // BtnADDant
             // 
-            BtnADDant.Location = new Point(282, 116);
+            BtnADDant.Location = new Point(550, 128);
             BtnADDant.Margin = new Padding(4);
             BtnADDant.Name = "BtnADDant";
             BtnADDant.Size = new Size(215, 36);
@@ -152,34 +163,17 @@
             // comboBox1
             // 
             comboBox1.Cursor = Cursors.Hand;
+            comboBox1.DropDownHeight = 25;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.DropDownWidth = 151;
             comboBox1.IntegralHeight = false;
             comboBox1.ItemHeight = 25;
-            comboBox1.Location = new Point(59, 119);
+            comboBox1.Location = new Point(327, 131);
             comboBox1.Margin = new Padding(4);
+            comboBox1.MaxDropDownItems = 5;
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(215, 33);
             comboBox1.TabIndex = 10;
-            comboBox1.MaxDropDownItems = 5;
-            comboBox1.DropDownHeight = comboBox1.ItemHeight * comboBox1.MaxDropDownItems;
-            // 
-            // comboBoxAllergies
-            // 
-            comboBoxAllergies.Cursor = Cursors.Hand;
-            comboBoxAllergies.DropDownHeight = 22;
-            comboBoxAllergies.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxAllergies.DropDownWidth = 151;
-            comboBoxAllergies.IntegralHeight = false;
-            comboBoxAllergies.ItemHeight = 25;
-            comboBoxAllergies.Location = new Point(59, 209);
-            comboBoxAllergies.Margin = new Padding(4);
-            comboBoxAllergies.MaxDropDownItems = 5;
-            comboBoxAllergies.Name = "comboBoxAllergies";
-            comboBoxAllergies.Size = new Size(215, 33);
-            comboBoxAllergies.TabIndex = 18;
-            comboBoxAllergies.MaxDropDownItems = 5;
-            comboBoxAllergies.DropDownHeight = comboBoxAllergies.ItemHeight * comboBoxAllergies.MaxDropDownItems;
             // 
             // btnCREERant
             // 
@@ -202,9 +196,16 @@
             // 
             // dataGridViewAntecedents
             // 
+            dataGridViewAntecedents.AllowUserToAddRows = false;
+            dataGridViewAntecedents.AllowUserToDeleteRows = false;
+            dataGridViewAntecedents.AllowUserToResizeColumns = false;
+            dataGridViewAntecedents.AllowUserToResizeRows = false;
             dataGridViewAntecedents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAntecedents.EnableHeadersVisualStyles = false;
             dataGridViewAntecedents.Location = new Point(197, 553);
+            dataGridViewAntecedents.MultiSelect = false;
             dataGridViewAntecedents.Name = "dataGridViewAntecedents";
+            dataGridViewAntecedents.ReadOnly = true;
             dataGridViewAntecedents.RowHeadersWidth = 51;
             dataGridViewAntecedents.RowTemplate.Height = 29;
             dataGridViewAntecedents.Size = new Size(300, 188);
@@ -213,9 +214,16 @@
             // 
             // dataGridViewAllergies
             // 
+            dataGridViewAllergies.AllowUserToAddRows = false;
+            dataGridViewAllergies.AllowUserToDeleteRows = false;
+            dataGridViewAllergies.AllowUserToResizeColumns = false;
+            dataGridViewAllergies.AllowUserToResizeRows = false;
             dataGridViewAllergies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAllergies.EnableHeadersVisualStyles = false;
             dataGridViewAllergies.Location = new Point(559, 553);
+            dataGridViewAllergies.MultiSelect = false;
             dataGridViewAllergies.Name = "dataGridViewAllergies";
+            dataGridViewAllergies.ReadOnly = true;
             dataGridViewAllergies.RowHeadersWidth = 51;
             dataGridViewAllergies.RowTemplate.Height = 29;
             dataGridViewAllergies.Size = new Size(377, 188);
@@ -242,9 +250,24 @@
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
             // 
+            // comboBoxAllergies
+            // 
+            comboBoxAllergies.Cursor = Cursors.Hand;
+            comboBoxAllergies.DropDownHeight = 25;
+            comboBoxAllergies.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAllergies.DropDownWidth = 151;
+            comboBoxAllergies.IntegralHeight = false;
+            comboBoxAllergies.ItemHeight = 25;
+            comboBoxAllergies.Location = new Point(336, 291);
+            comboBoxAllergies.Margin = new Padding(4);
+            comboBoxAllergies.MaxDropDownItems = 5;
+            comboBoxAllergies.Name = "comboBoxAllergies";
+            comboBoxAllergies.Size = new Size(215, 33);
+            comboBoxAllergies.TabIndex = 18;
+            // 
             // BtnADDall
             // 
-            BtnADDall.Location = new Point(282, 209);
+            BtnADDall.Location = new Point(559, 291);
             BtnADDall.Margin = new Padding(4);
             BtnADDall.Name = "BtnADDall";
             BtnADDall.Size = new Size(215, 36);
@@ -274,15 +297,59 @@
             // 
             // PatientALL
             // 
+            PatientALL.AllowUserToAddRows = false;
+            PatientALL.AllowUserToDeleteRows = false;
+            PatientALL.AllowUserToResizeColumns = false;
+            PatientALL.AllowUserToResizeRows = false;
             PatientALL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PatientALL.Location = new Point(598, 203);
+            PatientALL.EnableHeadersVisualStyles = false;
+            PatientALL.Location = new Point(773, 172);
             PatientALL.Margin = new Padding(4);
+            PatientALL.MultiSelect = false;
             PatientALL.Name = "PatientALL";
+            PatientALL.ReadOnly = true;
             PatientALL.RowHeadersWidth = 51;
             PatientALL.RowTemplate.Height = 29;
             PatientALL.Size = new Size(377, 155);
             PatientALL.TabIndex = 22;
             PatientALL.CellContentDoubleClick += PatientALL_CellContentDoubleClick;
+            // 
+            // reccupNom
+            // 
+            reccupNom.AutoSize = true;
+            reccupNom.Location = new Point(13, 9);
+            reccupNom.Name = "reccupNom";
+            reccupNom.Size = new Size(117, 25);
+            reccupNom.TabIndex = 23;
+            reccupNom.Text = "Information De";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("News Gothic Condensed", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(997, 331);
+            label4.Name = "label4";
+            label4.Size = new Size(154, 16);
+            label4.TabIndex = 24;
+            label4.Text = "(Double Clique pour supprimer)";
+            // 
+            // txtPAT
+            // 
+            txtPAT.AutoSize = true;
+            txtPAT.Location = new Point(163, 9);
+            txtPAT.Name = "txtPAT";
+            txtPAT.Size = new Size(39, 25);
+            txtPAT.TabIndex = 28;
+            txtPAT.Text = "info";
+            // 
+            // txtSEXE
+            // 
+            txtSEXE.AutoSize = true;
+            txtSEXE.Location = new Point(105, 9);
+            txtSEXE.Name = "txtSEXE";
+            txtSEXE.Size = new Size(39, 25);
+            txtSEXE.TabIndex = 29;
+            txtSEXE.Text = "info";
             // 
             // PatientInfo
             // 
@@ -290,6 +357,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1163, 864);
+            Controls.Add(txtSEXE);
+            Controls.Add(txtPAT);
+            Controls.Add(label4);
+            Controls.Add(reccupNom);
             Controls.Add(PatientALL);
             Controls.Add(textBox2);
             Controls.Add(btnAllergie);
@@ -349,5 +420,9 @@
         private TextBox textBox2;
         private Button btnAllergie;
         private DataGridView PatientALL;
+        private Label reccupNom;
+        private Label label4;
+        private Label txtPAT;
+        private Label txtSEXE;
     }
 }
