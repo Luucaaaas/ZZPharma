@@ -40,6 +40,7 @@
             label2 = new Label();
             Antecedents = new Label();
             pictureBox1 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -153,11 +154,22 @@
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            button2.Location = new Point(664, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 36);
+            button2.TabIndex = 12;
+            button2.Text = "Retour Accueil";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // incompatible
             // 
             AutoScaleDimensions = new SizeF(7F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 511);
+            Controls.Add(button2);
             Controls.Add(pictureBox1);
             Controls.Add(Antecedents);
             Controls.Add(label2);
@@ -195,5 +207,6 @@
         private Label label2;
         private Label Antecedents;
         private PictureBox pictureBox1;
+        private Button button2;
     }
 }
