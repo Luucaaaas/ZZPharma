@@ -481,18 +481,6 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAfQAAAAoCAIAAACHP589AAABB2lDQ1BJQ0MgUHJvZmlsZQAAKM9jYGA8
-        wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+sykA44U1KLk4H0ByBWKQJaDjRS
-        BMgWSYewNUDsJAjbBsQuLykoAbIDQOyikCBnIDsFyNZIR2InIbGTC4pA6nuAbJvcnNJkhLsZeFLzQoOB
-        NAcQyzAUMwQxuDM4gfwPUZK/iIHB4isDA/MEhFjSTAaG7a0MDBK3EGIqCxgY+FsYGLadR4ghwqQgsSgR
-        LMQCxExpaQwMn5YzMPBGMjAIX2Bg4IqGBQQOtymA3ebOkA+E6Qw5DKlAEU+GPIZkBj0gy4jBgMGQwQwA
-        ptY/P1N/5B4AAAAJcEhZcwAADr8AAA6/ATgFUyQAAABRSURBVHhe7cEBDQAAAMKg909tDjcgAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEs16ogAAYgv
-        WfUAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAoKAAAAEAIAConAEAFgAAACgAAACgAAAAQAEAAAEAIAAAAAAAAJABAAAAAAAAAAAAAAAAAAAA

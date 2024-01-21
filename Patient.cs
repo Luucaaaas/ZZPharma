@@ -35,6 +35,9 @@ namespace ZZinventory
                 {
                     column.HeaderText = "Sexe";
                 }
+
+
+
             }
         }
 

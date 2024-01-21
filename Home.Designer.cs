@@ -34,13 +34,14 @@
             btnmedica = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            btnINC = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnPatients
             // 
-            btnPatients.Location = new Point(334, 282);
+            btnPatients.Location = new Point(280, 284);
             btnPatients.Margin = new Padding(2, 3, 2, 3);
             btnPatients.Name = "btnPatients";
             btnPatients.Size = new Size(131, 37);
@@ -51,7 +52,7 @@
             // 
             // btnOrdo
             // 
-            btnOrdo.Location = new Point(200, 282);
+            btnOrdo.Location = new Point(146, 284);
             btnOrdo.Margin = new Padding(2, 3, 2, 3);
             btnOrdo.Name = "btnOrdo";
             btnOrdo.Size = new Size(131, 37);
@@ -62,7 +63,7 @@
             // 
             // btnmedica
             // 
-            btnmedica.Location = new Point(469, 282);
+            btnmedica.Location = new Point(415, 284);
             btnmedica.Margin = new Padding(2, 3, 2, 3);
             btnmedica.Name = "btnmedica";
             btnmedica.Size = new Size(131, 37);
@@ -91,11 +92,23 @@
             pictureBox2.TabIndex = 11;
             pictureBox2.TabStop = false;
             // 
+            // btnINC
+            // 
+            btnINC.Location = new Point(550, 284);
+            btnINC.Margin = new Padding(2, 3, 2, 3);
+            btnINC.Name = "btnINC";
+            btnINC.Size = new Size(131, 37);
+            btnINC.TabIndex = 12;
+            btnINC.Text = "Incompatibilité";
+            btnINC.UseVisualStyleBackColor = true;
+            btnINC.Click += btnINC_Click;
+            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(9F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 353);
+            Controls.Add(btnINC);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnmedica);
@@ -118,5 +131,6 @@
         private Button btnmedica;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button btnINC;
     }
 }

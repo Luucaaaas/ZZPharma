@@ -34,15 +34,11 @@
             label3 = new Label();
             txtContreIndication = new TextBox();
             txtLibelleMed = new TextBox();
-            cmbAntecedents = new ComboBox();
-            cmbAllergies = new ComboBox();
-            cmbMedicaments = new ComboBox();
-            btnCREERinc = new Button();
             SuspendLayout();
             // 
             // btnmod
             // 
-            btnmod.Location = new Point(12, 213);
+            btnmod.Location = new Point(104, 232);
             btnmod.Margin = new Padding(3, 2, 3, 2);
             btnmod.Name = "btnmod";
             btnmod.Size = new Size(82, 22);
@@ -54,7 +50,7 @@
             // txtmed
             // 
             txtmed.AutoSize = true;
-            txtmed.Location = new Point(33, 9);
+            txtmed.Location = new Point(125, 28);
             txtmed.Name = "txtmed";
             txtmed.Size = new Size(38, 15);
             txtmed.TabIndex = 1;
@@ -63,16 +59,16 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 41);
+            label2.Location = new Point(104, 60);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(34, 15);
             label2.TabIndex = 2;
-            label2.Text = "label2";
+            label2.Text = "Nom";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(22, 138);
+            label3.Location = new Point(114, 157);
             label3.Name = "label3";
             label3.Size = new Size(38, 15);
             label3.TabIndex = 3;
@@ -80,7 +76,7 @@
             // 
             // txtContreIndication
             // 
-            txtContreIndication.Location = new Point(1, 165);
+            txtContreIndication.Location = new Point(93, 184);
             txtContreIndication.Margin = new Padding(3, 2, 3, 2);
             txtContreIndication.Name = "txtContreIndication";
             txtContreIndication.Size = new Size(110, 23);
@@ -88,55 +84,17 @@
             // 
             // txtLibelleMed
             // 
-            txtLibelleMed.Location = new Point(12, 67);
+            txtLibelleMed.Location = new Point(104, 86);
             txtLibelleMed.Margin = new Padding(3, 2, 3, 2);
             txtLibelleMed.Name = "txtLibelleMed";
             txtLibelleMed.Size = new Size(110, 23);
             txtLibelleMed.TabIndex = 5;
-            // 
-            // cmbAntecedents
-            // 
-            cmbAntecedents.FormattingEnabled = true;
-            cmbAntecedents.Location = new Point(253, 198);
-            cmbAntecedents.Name = "cmbAntecedents";
-            cmbAntecedents.Size = new Size(323, 23);
-            cmbAntecedents.TabIndex = 6;
-            // 
-            // cmbAllergies
-            // 
-            cmbAllergies.FormattingEnabled = true;
-            cmbAllergies.Location = new Point(277, 151);
-            cmbAllergies.Name = "cmbAllergies";
-            cmbAllergies.Size = new Size(343, 23);
-            cmbAllergies.TabIndex = 7;
-            // 
-            // cmbMedicaments
-            // 
-            cmbMedicaments.FormattingEnabled = true;
-            cmbMedicaments.Location = new Point(277, 95);
-            cmbMedicaments.Name = "cmbMedicaments";
-            cmbMedicaments.Size = new Size(299, 23);
-            cmbMedicaments.TabIndex = 8;
-            // 
-            // btnCREERinc
-            // 
-            btnCREERinc.Location = new Point(292, 267);
-            btnCREERinc.Name = "btnCREERinc";
-            btnCREERinc.Size = new Size(75, 23);
-            btnCREERinc.TabIndex = 9;
-            btnCREERinc.Text = "button1";
-            btnCREERinc.UseVisualStyleBackColor = true;
-            btnCREERinc.Click += btnCREERinc_Click;
             // 
             // MedicamentInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
-            Controls.Add(btnCREERinc);
-            Controls.Add(cmbMedicaments);
-            Controls.Add(cmbAllergies);
-            Controls.Add(cmbAntecedents);
             Controls.Add(txtLibelleMed);
             Controls.Add(txtContreIndication);
             Controls.Add(label3);
@@ -158,8 +116,8 @@
         private Label label3;
         private TextBox txtContreIndication;
         private TextBox txtLibelleMed;
-        private ComboBox cmbAntecedents;
         private ComboBox cmbAllergies;
+        private ComboBox cmbAntecedents;
         private ComboBox cmbMedicaments;
         private Button btnCREERinc;
     }

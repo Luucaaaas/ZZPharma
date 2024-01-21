@@ -39,8 +39,10 @@ namespace ZZinventory
             {
                 txtSEXE.Text = "Madame";
             }
+
         }
 
+ 
 
         private void ChargerAntecedents()
         {

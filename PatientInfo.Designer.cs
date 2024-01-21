@@ -54,12 +54,14 @@
             label4 = new Label();
             txtPAT = new Label();
             txtSEXE = new Label();
+            dataGridViewinc = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)PatientANT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAntecedents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAllergies).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PatientALL).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewinc).BeginInit();
             SuspendLayout();
             // 
             // txtNom
@@ -67,7 +69,7 @@
             txtNom.Location = new Point(13, 85);
             txtNom.Margin = new Padding(4);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(170, 32);
+            txtNom.Size = new Size(170, 27);
             txtNom.TabIndex = 0;
             // 
             // txtPrenom
@@ -75,7 +77,7 @@
             txtPrenom.Location = new Point(13, 150);
             txtPrenom.Margin = new Padding(4);
             txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(170, 32);
+            txtPrenom.Size = new Size(170, 27);
             txtPrenom.TabIndex = 1;
             // 
             // BtnModifier
@@ -97,7 +99,7 @@
             cmbSexe.Location = new Point(13, 207);
             cmbSexe.Margin = new Padding(4);
             cmbSexe.Name = "cmbSexe";
-            cmbSexe.Size = new Size(170, 33);
+            cmbSexe.Size = new Size(170, 28);
             cmbSexe.TabIndex = 4;
             // 
             // label1
@@ -106,7 +108,7 @@
             label1.Location = new Point(13, 56);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(45, 25);
+            label1.Size = new Size(36, 20);
             label1.TabIndex = 5;
             label1.Text = "Nom";
             // 
@@ -116,7 +118,7 @@
             label2.Location = new Point(13, 121);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(67, 25);
+            label2.Size = new Size(54, 20);
             label2.TabIndex = 6;
             label2.Text = "Prenom";
             // 
@@ -126,7 +128,7 @@
             label3.Location = new Point(13, 186);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(45, 25);
+            label3.Size = new Size(37, 20);
             label3.TabIndex = 7;
             label3.Text = "Sexe";
             // 
@@ -138,20 +140,20 @@
             PatientANT.AllowUserToResizeRows = false;
             PatientANT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PatientANT.EnableHeadersVisualStyles = false;
-            PatientANT.Location = new Point(773, 9);
+            PatientANT.Location = new Point(213, 56);
             PatientANT.Margin = new Padding(4);
             PatientANT.MultiSelect = false;
             PatientANT.Name = "PatientANT";
             PatientANT.ReadOnly = true;
             PatientANT.RowHeadersWidth = 51;
             PatientANT.RowTemplate.Height = 29;
-            PatientANT.Size = new Size(377, 155);
+            PatientANT.Size = new Size(215, 155);
             PatientANT.TabIndex = 8;
             PatientANT.CellContentDoubleClick += PatientANT_CellContentDoubleClick;
             // 
             // BtnADDant
             // 
-            BtnADDant.Location = new Point(550, 128);
+            BtnADDant.Location = new Point(213, 250);
             BtnADDant.Margin = new Padding(4);
             BtnADDant.Name = "BtnADDant";
             BtnADDant.Size = new Size(215, 36);
@@ -167,17 +169,17 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.DropDownWidth = 151;
             comboBox1.IntegralHeight = false;
-            comboBox1.ItemHeight = 25;
-            comboBox1.Location = new Point(327, 131);
+            comboBox1.ItemHeight = 20;
+            comboBox1.Location = new Point(213, 216);
             comboBox1.Margin = new Padding(4);
             comboBox1.MaxDropDownItems = 5;
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(215, 33);
+            comboBox1.Size = new Size(215, 28);
             comboBox1.TabIndex = 10;
             // 
             // btnCREERant
             // 
-            btnCREERant.Location = new Point(13, 622);
+            btnCREERant.Location = new Point(4, 743);
             btnCREERant.Margin = new Padding(4);
             btnCREERant.Name = "btnCREERant";
             btnCREERant.Size = new Size(161, 36);
@@ -188,10 +190,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(13, 566);
+            textBox1.Location = new Point(4, 687);
             textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(161, 32);
+            textBox1.Size = new Size(161, 27);
             textBox1.TabIndex = 12;
             // 
             // dataGridViewAntecedents
@@ -257,17 +259,17 @@
             comboBoxAllergies.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAllergies.DropDownWidth = 151;
             comboBoxAllergies.IntegralHeight = false;
-            comboBoxAllergies.ItemHeight = 25;
-            comboBoxAllergies.Location = new Point(336, 291);
+            comboBoxAllergies.ItemHeight = 20;
+            comboBoxAllergies.Location = new Point(436, 219);
             comboBoxAllergies.Margin = new Padding(4);
             comboBoxAllergies.MaxDropDownItems = 5;
             comboBoxAllergies.Name = "comboBoxAllergies";
-            comboBoxAllergies.Size = new Size(215, 33);
+            comboBoxAllergies.Size = new Size(215, 28);
             comboBoxAllergies.TabIndex = 18;
             // 
             // BtnADDall
             // 
-            BtnADDall.Location = new Point(559, 291);
+            BtnADDall.Location = new Point(436, 250);
             BtnADDall.Margin = new Padding(4);
             BtnADDall.Name = "BtnADDall";
             BtnADDall.Size = new Size(215, 36);
@@ -281,7 +283,7 @@
             textBox2.Location = new Point(960, 566);
             textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(161, 32);
+            textBox2.Size = new Size(161, 27);
             textBox2.TabIndex = 21;
             // 
             // btnAllergie
@@ -303,14 +305,14 @@
             PatientALL.AllowUserToResizeRows = false;
             PatientALL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PatientALL.EnableHeadersVisualStyles = false;
-            PatientALL.Location = new Point(773, 172);
+            PatientALL.Location = new Point(436, 56);
             PatientALL.Margin = new Padding(4);
             PatientALL.MultiSelect = false;
             PatientALL.Name = "PatientALL";
             PatientALL.ReadOnly = true;
             PatientALL.RowHeadersWidth = 51;
             PatientALL.RowTemplate.Height = 29;
-            PatientALL.Size = new Size(377, 155);
+            PatientALL.Size = new Size(215, 155);
             PatientALL.TabIndex = 22;
             PatientALL.CellContentDoubleClick += PatientALL_CellContentDoubleClick;
             // 
@@ -319,7 +321,7 @@
             reccupNom.AutoSize = true;
             reccupNom.Location = new Point(13, 9);
             reccupNom.Name = "reccupNom";
-            reccupNom.Size = new Size(117, 25);
+            reccupNom.Size = new Size(95, 20);
             reccupNom.TabIndex = 23;
             reccupNom.Text = "Information De";
             // 
@@ -327,9 +329,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("News Gothic Condensed", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(997, 331);
+            label4.Location = new Point(213, 378);
             label4.Name = "label4";
-            label4.Size = new Size(154, 16);
+            label4.Size = new Size(132, 14);
             label4.TabIndex = 24;
             label4.Text = "(Double Clique pour supprimer)";
             // 
@@ -338,7 +340,7 @@
             txtPAT.AutoSize = true;
             txtPAT.Location = new Point(163, 9);
             txtPAT.Name = "txtPAT";
-            txtPAT.Size = new Size(39, 25);
+            txtPAT.Size = new Size(31, 20);
             txtPAT.TabIndex = 28;
             txtPAT.Text = "info";
             // 
@@ -347,16 +349,35 @@
             txtSEXE.AutoSize = true;
             txtSEXE.Location = new Point(105, 9);
             txtSEXE.Name = "txtSEXE";
-            txtSEXE.Size = new Size(39, 25);
+            txtSEXE.Size = new Size(31, 20);
             txtSEXE.TabIndex = 29;
             txtSEXE.Text = "info";
             // 
+            // dataGridViewinc
+            // 
+            dataGridViewinc.AllowUserToAddRows = false;
+            dataGridViewinc.AllowUserToDeleteRows = false;
+            dataGridViewinc.AllowUserToResizeColumns = false;
+            dataGridViewinc.AllowUserToResizeRows = false;
+            dataGridViewinc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewinc.EnableHeadersVisualStyles = false;
+            dataGridViewinc.Location = new Point(659, 56);
+            dataGridViewinc.Margin = new Padding(4);
+            dataGridViewinc.MultiSelect = false;
+            dataGridViewinc.Name = "dataGridViewinc";
+            dataGridViewinc.ReadOnly = true;
+            dataGridViewinc.RowHeadersWidth = 51;
+            dataGridViewinc.RowTemplate.Height = 29;
+            dataGridViewinc.Size = new Size(215, 155);
+            dataGridViewinc.TabIndex = 30;
+            // 
             // PatientInfo
             // 
-            AutoScaleDimensions = new SizeF(9F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1163, 864);
+            Controls.Add(dataGridViewinc);
             Controls.Add(txtSEXE);
             Controls.Add(txtPAT);
             Controls.Add(label4);
@@ -393,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)PatientALL).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewinc).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -424,5 +446,6 @@
         private Label label4;
         private Label txtPAT;
         private Label txtSEXE;
+        private DataGridView dataGridViewinc;
     }
 }

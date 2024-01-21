@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ZZinventory
+﻿namespace ZZinventory
 {
     public partial class Home : Form
     {
@@ -27,8 +17,8 @@ namespace ZZinventory
 
         private void btnOrdo_Click(object sender, EventArgs e)
         {
-            Home Home = new Home();
-            Home.Show();
+            Ordonance Ordonance = new Ordonance();
+            Ordonance.Show();
             this.Hide();
         }
 
@@ -39,5 +29,11 @@ namespace ZZinventory
             this.Hide();
         }
 
+        private void btnINC_Click(object sender, EventArgs e)
+        {
+            incompatible incompatible = new incompatible();
+            incompatible.Show();
+            this.Hide();
+        }
     }
 }
