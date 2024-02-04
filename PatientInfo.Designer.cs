@@ -54,14 +54,12 @@
             label4 = new Label();
             txtPAT = new Label();
             txtSEXE = new Label();
-            dataGridViewinc = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)PatientANT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAntecedents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAllergies).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PatientALL).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewinc).BeginInit();
             SuspendLayout();
             // 
             // txtNom
@@ -329,7 +327,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("News Gothic Condensed", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(213, 378);
+            label4.Location = new Point(365, 38);
             label4.Name = "label4";
             label4.Size = new Size(132, 14);
             label4.TabIndex = 24;
@@ -353,31 +351,12 @@
             txtSEXE.TabIndex = 29;
             txtSEXE.Text = "info";
             // 
-            // dataGridViewinc
-            // 
-            dataGridViewinc.AllowUserToAddRows = false;
-            dataGridViewinc.AllowUserToDeleteRows = false;
-            dataGridViewinc.AllowUserToResizeColumns = false;
-            dataGridViewinc.AllowUserToResizeRows = false;
-            dataGridViewinc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewinc.EnableHeadersVisualStyles = false;
-            dataGridViewinc.Location = new Point(659, 56);
-            dataGridViewinc.Margin = new Padding(4);
-            dataGridViewinc.MultiSelect = false;
-            dataGridViewinc.Name = "dataGridViewinc";
-            dataGridViewinc.ReadOnly = true;
-            dataGridViewinc.RowHeadersWidth = 51;
-            dataGridViewinc.RowTemplate.Height = 29;
-            dataGridViewinc.Size = new Size(215, 155);
-            dataGridViewinc.TabIndex = 30;
-            // 
             // PatientInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1163, 864);
-            Controls.Add(dataGridViewinc);
             Controls.Add(txtSEXE);
             Controls.Add(txtPAT);
             Controls.Add(label4);
@@ -414,7 +393,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)PatientALL).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewinc).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -446,6 +424,5 @@
         private Label label4;
         private Label txtPAT;
         private Label txtSEXE;
-        private DataGridView dataGridViewinc;
     }
 }

@@ -32,10 +32,8 @@
             btnPatients = new Button();
             btnOrdo = new Button();
             btnmedica = new Button();
-            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             btnINC = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -72,16 +70,6 @@
             btnmedica.UseVisualStyleBackColor = true;
             btnmedica.Click += btnmedica_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(200, -50);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(400, 300);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
@@ -110,7 +98,6 @@
             ClientSize = new Size(782, 353);
             Controls.Add(btnINC);
             Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
             Controls.Add(btnmedica);
             Controls.Add(btnOrdo);
             Controls.Add(btnPatients);
@@ -119,7 +106,6 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "GSBPharma | Home";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
@@ -129,7 +115,6 @@
         private Button btnPatients;
         private Button btnOrdo;
         private Button btnmedica;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button btnINC;
     }
