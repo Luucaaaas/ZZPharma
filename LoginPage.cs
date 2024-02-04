@@ -92,6 +92,7 @@ namespace ZZinventory
             // 
             // button1
             // 
+            button1.BackColor = Color.White;
             button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -312,7 +313,7 @@ namespace ZZinventory
             // 
             // LoginPage
             // 
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(51, 51, 51);
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(850, 600);
             ControlBox = false;

@@ -32,81 +32,106 @@
             btnPatients = new Button();
             btnOrdo = new Button();
             btnmedica = new Button();
-            pictureBox2 = new PictureBox();
             btnINC = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panelUP = new Panel();
+            button2 = new Button();
+            pictureBox5 = new PictureBox();
+            label2 = new Label();
+            panelUP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // btnPatients
             // 
-            btnPatients.Location = new Point(280, 284);
-            btnPatients.Margin = new Padding(2, 3, 2, 3);
+            resources.ApplyResources(btnPatients, "btnPatients");
+            btnPatients.Cursor = Cursors.Hand;
             btnPatients.Name = "btnPatients";
-            btnPatients.Size = new Size(131, 37);
-            btnPatients.TabIndex = 0;
-            btnPatients.Text = "Patients";
             btnPatients.UseVisualStyleBackColor = true;
             btnPatients.Click += btnPatients_Click;
             // 
             // btnOrdo
             // 
-            btnOrdo.Location = new Point(146, 284);
-            btnOrdo.Margin = new Padding(2, 3, 2, 3);
+            resources.ApplyResources(btnOrdo, "btnOrdo");
+            btnOrdo.Cursor = Cursors.Hand;
             btnOrdo.Name = "btnOrdo";
-            btnOrdo.Size = new Size(131, 37);
-            btnOrdo.TabIndex = 1;
-            btnOrdo.Text = "Ordonnances";
             btnOrdo.UseVisualStyleBackColor = true;
             btnOrdo.Click += btnOrdo_Click;
             // 
             // btnmedica
             // 
-            btnmedica.Location = new Point(415, 284);
-            btnmedica.Margin = new Padding(2, 3, 2, 3);
+            resources.ApplyResources(btnmedica, "btnmedica");
+            btnmedica.Cursor = Cursors.Hand;
             btnmedica.Name = "btnmedica";
-            btnmedica.Size = new Size(131, 37);
-            btnmedica.TabIndex = 2;
-            btnmedica.Text = "Médicaments";
             btnmedica.UseVisualStyleBackColor = true;
             btnmedica.Click += btnmedica_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-25, 256);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(852, 5);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
-            // 
             // btnINC
             // 
-            btnINC.Location = new Point(550, 284);
-            btnINC.Margin = new Padding(2, 3, 2, 3);
+            resources.ApplyResources(btnINC, "btnINC");
+            btnINC.Cursor = Cursors.Hand;
             btnINC.Name = "btnINC";
-            btnINC.Size = new Size(131, 37);
-            btnINC.TabIndex = 12;
-            btnINC.Text = "Incompatibilité";
             btnINC.UseVisualStyleBackColor = true;
             btnINC.Click += btnINC_Click;
             // 
+            // panelUP
+            // 
+            panelUP.BackColor = Color.FromArgb(19, 70, 104);
+            panelUP.Controls.Add(button2);
+            panelUP.Controls.Add(pictureBox5);
+            panelUP.Controls.Add(label2);
+            panelUP.Cursor = Cursors.SizeAll;
+            resources.ApplyResources(panelUP, "panelUP");
+            panelUP.Name = "panelUP";
+            panelUP.MouseDown += panelUP_MouseDown;
+            panelUP.MouseMove += panelUP_MouseMove;
+            panelUP.MouseUp += panelUP_MouseUp;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(19, 70, 104);
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Red;
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            resources.ApplyResources(button2, "button2");
+            button2.ForeColor = Color.White;
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBox5, "pictureBox5");
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.TabStop = false;
+            pictureBox5.MouseDown += pictureBox5_MouseDown;
+            pictureBox5.MouseMove += pictureBox5_MouseMove;
+            pictureBox5.MouseUp += pictureBox5_MouseUp;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
+            label2.MouseDown += label2_MouseDown;
+            label2.MouseMove += label2_MouseMove;
+            label2.MouseUp += label2_MouseUp;
+            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 353);
+            AutoScaleMode = AutoScaleMode.Inherit;
+            resources.ApplyResources(this, "$this");
+            ControlBox = false;
+            Controls.Add(panelUP);
             Controls.Add(btnINC);
-            Controls.Add(pictureBox2);
             Controls.Add(btnmedica);
             Controls.Add(btnOrdo);
             Controls.Add(btnPatients);
-            Font = new Font("News Gothic Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
-            Text = "GSBPharma | Home";
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panelUP.ResumeLayout(false);
+            panelUP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -115,7 +140,10 @@
         private Button btnPatients;
         private Button btnOrdo;
         private Button btnmedica;
-        private PictureBox pictureBox2;
         private Button btnINC;
+        private Panel panelUP;
+        private Button button2;
+        private PictureBox pictureBox5;
+        private Label label2;
     }
 }

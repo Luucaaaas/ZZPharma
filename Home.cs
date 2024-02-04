@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 
 namespace ZZinventory
@@ -9,48 +8,18 @@ namespace ZZinventory
 
     public partial class Home : Form
     {
-        private string connectionString;
-
+        private bool isDragging = false;
+        private Point dragStartPoint;
 
         public Home()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["localhost"].ConnectionString;
         }
 
-        private void LoadMedecins()
-        {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT nom_p, prenom_p FROM Medecin";
-                    using (MySqlCommand command = new MySqlCommand(query, conn))
-                    {
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                reader.Read();
-                                string nomMedecin = reader.GetString(0);
-                                string prenomMedecin = reader.GetString(1);
-
-                                labelMedecin.Text = nomMedecin +", "+ prenomMedecin;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors du chargement des médecins : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-   
 
 
-    private void btnPatients_Click(object sender, EventArgs e)
+
+        private void btnPatients_Click(object sender, EventArgs e)
         {
             Patient Patient = new Patient();
             Patient.Show();
@@ -76,6 +45,79 @@ namespace ZZinventory
             incompatible incompatible = new incompatible();
             incompatible.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void pictureBox5_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                Point screenPoint = PointToScreen(e.Location);
+                Location = new Point(screenPoint.X - dragStartPoint.X, screenPoint.Y - dragStartPoint.Y);
+            }
+        }
+
+        private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
+        {
+            {
+                isDragging = false;
+            }
+        }
+
+        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
+        {
+            {
+                isDragging = true;
+                dragStartPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void label2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                Point screenPoint = PointToScreen(e.Location);
+                Location = new Point(screenPoint.X - dragStartPoint.X, screenPoint.Y - dragStartPoint.Y);
+            }
+        }
+
+        private void label2_MouseUp(object sender, MouseEventArgs e)
+        {
+            {
+                isDragging = false;
+            }
+        }
+
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            {
+                isDragging = true;
+                dragStartPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void panelUP_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            dragStartPoint = new Point(e.X, e.Y);
+        }
+        private void panelUP_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                Point screenPoint = PointToScreen(e.Location);
+                Location = new Point(screenPoint.X - dragStartPoint.X, screenPoint.Y - dragStartPoint.Y);
+            }
+        }
+
+        private void panelUP_MouseUp(object sender, MouseEventArgs e)
+        {
+            {
+                isDragging = false;
+            }
         }
     }
 }
